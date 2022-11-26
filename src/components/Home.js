@@ -1,5 +1,4 @@
 import useFetch from '../composables/fetch'
-import AddForm from './AddForm'
 
 function Home() {
     const {arr,pending,error} = useFetch("https://ultra-d1da.onrender.com/ultra/data")
@@ -17,7 +16,6 @@ function Home() {
                     <h3>{ultra.vid_date}</h3>
                 </div>
             ))}
-        <AddForm/>
         </div>
     )
 }

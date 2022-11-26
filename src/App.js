@@ -1,6 +1,8 @@
 // import logo from './logo.svg';
-import './App.css';
-import Home from './components/Home'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
+import AddForm from "./components/AddForm";
 
 function App() {
   return (
@@ -19,7 +21,16 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Home/>
+      <Router>
+        <Switch>
+          <Route exact path={"/"}>
+            <Home />
+          </Route>
+          <Route exact path={"/create"}>
+            <AddForm />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

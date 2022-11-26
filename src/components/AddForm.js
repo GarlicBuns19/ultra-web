@@ -1,19 +1,61 @@
-import { useEffect, useState } from "react";
-import AddData from "../composables/add";
+import { useState } from "react";
 
 function AddingData() {
-  const { error, pending } = AddData(
-    "https://ultra-d1da.onrender.com/ultra/addData"
-  );
   const [episode, setEp] = useState("");
   const [episode_name, setEpName] = useState("");
   const [vid_date, setVidData] = useState("");
   const [vid, setVid] = useState("");
+  const [error, setErr] = useState(null);
+  const [pending, setPending] = useState(false);
+  const [finishAdding, setFin] = useState(null);
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let dataAdding = {
+      episode,
+      episode_name,
+      vid_date,
+      vid,
+    };
+    setPending(true);
+    fetch("https://ultra-d1da.onrender.com/ultra/addData", {
+      method: "POST",
+      body: JSON.stringify(dataAdding),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => {
+        setPending(false);
+        if (!res.ok) {
+          throw new Error("Could not add data");
+        }
+        return res.json();
+      })
+      .then((addedData) => {
+        console.log(addedData);
+        setFin("Your data was added");
+      })
+      .catch((err) => {
+        setPending(false);
+        setErr(err.message);
+      });
+  };
+  //   console.log(data)
+
   return (
     <div>
       <h1>Form</h1>
+      {error && (
+        <div>
+          <h1>{error}</h1>
+        </div>
+      )}
+      {finishAdding && (
+        <div>
+          <h1>{finishAdding}</h1>
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
         <label>Episode</label>
         <input
@@ -35,6 +77,7 @@ function AddingData() {
         <input
           type="text"
           value={vid_date}
+          placeholder="In read more of video"
           onChange={(e) => setVidData(e.target.value)}
         />
         <br />
@@ -42,9 +85,15 @@ function AddingData() {
         <input
           type="text"
           value={vid}
-          placeholder="Youtube link watch?v=(this part)"
+          placeholder="Link watch?v=(this part)"
           onChange={(e) => setVid(e.target.value)}
         />
+        {pending && <button disabled>Adding</button>}
+        {!pending && (
+          <button type="submit" value="Submit">
+            Submit
+          </button>
+        )}
       </form>
     </div>
   );
