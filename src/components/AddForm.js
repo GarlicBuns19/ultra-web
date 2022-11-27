@@ -36,6 +36,10 @@ function AddingData() {
       .then((addedData) => {
         console.log(addedData);
         setFin("Your data was added");
+        setEp("");
+        setEpName("");
+        setVidData("");
+        setVid("");
       })
       .catch((err) => {
         setPending(false);
@@ -121,7 +125,11 @@ function AddingData() {
               </div>
             </div>
           </div>
-          {pending && <button disabled>Adding</button>}
+          {pending && (
+            <button disabled className="mt-4">
+              Adding
+            </button>
+          )}
           {!pending && (
             <button type="submit" value="Submit" className="mt-4">
               Submit
