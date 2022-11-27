@@ -1,0 +1,7 @@
+.formWidth{
+    max-width: 800px;
+    margin: auto;
+}
+.textLeft{
+    text-align: left !important;
+}

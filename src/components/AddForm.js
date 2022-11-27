@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../AddForm.css";
 
 function AddingData() {
   const [episode, setEp] = useState("");
@@ -44,7 +45,7 @@ function AddingData() {
   //   console.log(data)
 
   return (
-    <div>
+    <div className="formWidth">
       <h1>Form</h1>
       {error && (
         <div>
@@ -56,45 +57,78 @@ function AddingData() {
           <h1>{finishAdding}</h1>
         </div>
       )}
-      <form onSubmit={handleSubmit}>
-        <label>Episode</label>
-        <input
-          type="text"
-          value={episode}
-          placeholder="Number eg 01 or 15"
-          onChange={(e) => setEp(e.target.value)}
-        />
-        <br />
-        <label>Episode Name</label>
-        <input
-          type="text"
-          value={episode_name}
-          placeholder="The Name of the ep"
-          onChange={(e) => setEpName(e.target.value)}
-        />
-        <br />
-        <label>Video Date</label>
-        <input
-          type="text"
-          value={vid_date}
-          placeholder="In read more of video"
-          onChange={(e) => setVidData(e.target.value)}
-        />
-        <br />
-        <label>Video Youtub Link</label>
-        <input
-          type="text"
-          value={vid}
-          placeholder="Link watch?v=(this part)"
-          onChange={(e) => setVid(e.target.value)}
-        />
-        {pending && <button disabled>Adding</button>}
-        {!pending && (
-          <button type="submit" value="Submit">
-            Submit
-          </button>
-        )}
-      </form>
+      <div className="container my-5">
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <div className="row">
+                <div className="col-6 textLeft">
+                  <label>Episode</label>
+                </div>
+                <div className="col-6">
+                  <input
+                    type="text"
+                    value={episode}
+                    placeholder="Number eg 01 or 15"
+                    onChange={(e) => setEp(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="row">
+                <div className="col-6 textLeft">
+                  <label>Episode Name</label>
+                </div>
+                <div className="col-6">
+                  <input
+                    type="text"
+                    value={episode_name}
+                    placeholder="The Name of the ep"
+                    onChange={(e) => setEpName(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="row">
+                <div className="col-6 textLeft">
+                  <label>Video Date</label>
+                </div>
+                <div className="col-6">
+                  <input
+                    type="text"
+                    value={vid_date}
+                    placeholder="In read more of video"
+                    onChange={(e) => setVidData(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="row">
+                <div className="col-6 textLeft">
+                  <label>Video Youtub Link</label>
+                </div>
+                <div className="col-6">
+                  <input
+                    type="text"
+                    value={vid}
+                    placeholder="Link watch?v=(this part)"
+                    onChange={(e) => setVid(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          {pending && <button disabled>Adding</button>}
+          {!pending && (
+            <button type="submit" value="Submit" className="mt-4">
+              Submit
+            </button>
+          )}
+        </form>
+      </div>
     </div>
   );
 }
