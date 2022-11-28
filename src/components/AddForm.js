@@ -27,6 +27,7 @@ function AddingData() {
       },
     })
       .then((res) => {
+        setErr(null)
         setPending(false);
         if (!res.ok) {
           throw new Error("Could not add data");
@@ -64,7 +65,7 @@ function AddingData() {
       <div className="container my-5">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 px-4">
               <div className="row">
                 <div className="col-6 textLeft">
                   <label>Episode</label>
@@ -75,11 +76,12 @@ function AddingData() {
                     value={episode}
                     placeholder="Number eg 01 or 15"
                     onChange={(e) => setEp(e.target.value)}
+                    required
                   />
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 px-4">
               <div className="row">
                 <div className="col-6 textLeft">
                   <label>Episode Name</label>
@@ -90,11 +92,12 @@ function AddingData() {
                     value={episode_name}
                     placeholder="The Name of the ep"
                     onChange={(e) => setEpName(e.target.value)}
+                    required
                   />
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 px-4">
               <div className="row">
                 <div className="col-6 textLeft">
                   <label>Video Date</label>
@@ -105,11 +108,12 @@ function AddingData() {
                     value={vid_date}
                     placeholder="In read more of video"
                     onChange={(e) => setVidData(e.target.value)}
+                    required
                   />
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 px-4">
               <div className="row">
                 <div className="col-6 textLeft">
                   <label>Video Youtub Link</label>
@@ -120,6 +124,7 @@ function AddingData() {
                     value={vid}
                     placeholder="Link watch?v=(this part)"
                     onChange={(e) => setVid(e.target.value)}
+                    required
                   />
                 </div>
               </div>
