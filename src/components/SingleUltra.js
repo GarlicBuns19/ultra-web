@@ -11,12 +11,12 @@ function SingleUltra() {
   } = useFetch(`https://ultra-d1da.onrender.com/ultra/data/${id}`);
   const mystyle = {
     width : "80%",
-    height : "80vh",
+    height : "83vh",
   };
   
   return (
     <div className="bgSayain">
-      Ultra id = {id}
+      {/* Ultra id = {id} */}
       {pending && <div>Getting data...</div>}
       {error && <div>{error}</div>}
       {ultra && (
