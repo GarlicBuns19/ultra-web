@@ -7,7 +7,8 @@
   pointer-events: none;
 }
 .bgSayain{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.566), rgba(0, 0, 0, 0.473)), url(https://raw.githubusercontent.com/GarlicBuns19/ultra-web/main/src/images/2sayains.webp);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.566), rgba(0, 0, 0, 0.473)), 
+  url("./images/2sayains.jpg");
     /* background-image: url(../Image/bg.jpg); */
     width: 100vw;
     height: 100vh;
