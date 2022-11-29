@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useFetch from "../composables/fetch";
 import img from "../images/ultra-vegito.webp";
+import sayains from "../images/2sayains.webp";
 
 function Home() {
   const { arr, pending, error } = useFetch(

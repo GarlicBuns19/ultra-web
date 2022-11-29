@@ -9,9 +9,13 @@ function SingleUltra() {
     pending,
     error,
   } = useFetch(`https://ultra-d1da.onrender.com/ultra/data/${id}`);
+  const mystyle = {
+    width : "80%",
+    height : "80vh",
+  };
   
   return (
-    <div>
+    <div className="bgSayain">
       Ultra id = {id}
       {pending && <div>Getting data...</div>}
       {error && <div>{error}</div>}
@@ -25,8 +29,7 @@ function SingleUltra() {
             <iframe
               src={`https://www.youtube.com/embed/` + ultra[0].vid}
               title={ultra[0].episode_name}
-              width="800"
-              height="500"
+              style={mystyle}
             ></iframe>
           </div>
           <h3>{ultra[0].vid_date}</h3>
