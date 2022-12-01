@@ -40,7 +40,7 @@ function Home() {
             <div className="ultraScroll row">
               {arr &&
                 arr.map((ultra) => (
-                  <div className="col-3 col-md-1 py-2" key={ultra.ultra_id}>
+                  <div className="col-3 col-md-2 py-2" key={ultra.ultra_id}>
                     <Link to={`/ultra/data/${ultra.ultra_id}`}>
                       <h2>Ep {ultra.episode}</h2>
                     </Link>
