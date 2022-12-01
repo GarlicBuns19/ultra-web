@@ -7,48 +7,40 @@ function Home() {
   const { arr, pending, error } = useFetch(
     "https://ultra-d1da.onrender.com/ultra/data"
   );
-  const mystyle = {
-    width: "100%",
-    height: "90vh",
-    // padding: "100px 0 0 0"
-  };
+  // const mystyle = {
+  //   width: "100%",
+  //   height: "90vh",
+  // };
 
   return (
-    <div className="container">
+    <div className="container-fluid home">
       <h1>Home</h1>
       {pending && <div>Loading the data</div>}
       {error && <div>{error}</div>}
 
       <div className="row">
-        <div className="col-12 col-md-6">
-          <img src={img} alt="" className="img-fluid" style={mystyle} />
+        <div className="col-sm-12 col-md-5">
+          {/* <img src={img} alt="" className="img-fluid" style={mystyle} /> */}
+          <img src={img} alt="" className="ultra-img img-fluid" />
         </div>
-        <div className=" col-12 col-md-6">
+        <div className=" col-sm-12 col-md-7">
           <div className="row">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-              deserunt alias ut, est rem eos ea odit in beatae commodi nobis
-              impedit doloremque modi sapiente tempora animi maxime adipisci
-              nemo fugiat, autem unde error necessitatibus. Doloremque facere
-              possimus vero aspernatur accusamus rerum, odio tenetur, itaque
-              quisquam quod minus maxime architecto. Pariatur deserunt esse
-              voluptas, delectus vel consectetur, harum quo eius obcaecati,
-              voluptate fugit recusandae accusantium. Unde, voluptatum
-              voluptatem error quas soluta aperiam qui fugit maiores
-              perspiciatis quis totam earum iste deleniti non nisi fugiat ullam
-              esse nihil atque quos ratione in sed ipsam. Et doloremque ipsum
-              natus mollitia, facere fugit.
+              After the tournament of power Goku and Vegeta conitue traing with
+              Beerus and Whis. 
+              <br />
+              While training Beerus ask to fight but he wants
+              to fight Gogeta and that is when it started.
             </p>
 
             <ul className="listData">
-                <li>Genre : Fight</li>
-                <li>Genre : Fight</li>
-                <li>Genre : Fight</li>
+              <li>Genre : Fight</li>
             </ul>
+
             <div className="ultraScroll row">
               {arr &&
                 arr.map((ultra) => (
-                  <div className="col-3 col-md-1 p-4" key={ultra.ultra_id}>
+                  <div className="col-3 col-md-1 py-2" key={ultra.ultra_id}>
                     <Link to={`/ultra/data/${ultra.ultra_id}`}>
                       <h2>Ep {ultra.episode}</h2>
                     </Link>
