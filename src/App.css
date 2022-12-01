@@ -58,7 +58,7 @@ a:hover{
 }
 @media (width <= 770px)  {
   .ultra-img{
-    height: 60vh;
+    height: 92vh;
   }
 }
 @media (width > 769px){

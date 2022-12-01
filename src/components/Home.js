@@ -26,11 +26,11 @@ function Home() {
         <div className=" col-sm-12 col-md-7">
           <div className="row">
             <p>
-              After the tournament of power Goku and Vegeta conitue traing with
+              After the tournament of power Goku and Vegeta conitnue training with
               Beerus and Whis. 
               <br />
               While training Beerus ask to fight but he wants
-              to fight Gogeta and that is when it started.
+              to fight Gogeta and that is when it all started.
             </p>
 
             <ul className="listData">
