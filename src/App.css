@@ -53,12 +53,12 @@ a:hover{
 /* Media Queries */
 @media (width <= 500px)  {
   .ultra-img{
-    height: 50vh;
+    height: 55vh;
   }
 }
-@media (width <= 770px)  {
+@media (width > 500px)  {
   .ultra-img{
-    height: 92vh;
+    height: 70vh;
   }
 }
 @media (width > 769px){

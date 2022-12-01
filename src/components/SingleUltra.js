@@ -2,6 +2,7 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../composables/fetch";
 
+
 function SingleUltra() {
   const { id } = useParams();
   const {
@@ -10,10 +11,11 @@ function SingleUltra() {
     error,
   } = useFetch(`https://ultra-d1da.onrender.com/ultra/data/${id}`);
   const mystyle = {
-    width : "80%",
-    height : "83vh",
+    width: "80%",
+    height: "83vh",
   };
-  
+  console.log(parseInt(id) + 1)
+
   return (
     <div className="bgSayain">
       {/* Ultra id = {id} */}
